@@ -8,7 +8,7 @@ export default function EmpleadoForm() {
 
     const onSubmit = async (data) => {
         try {
-            await axios.post("http://localhost:3000/api/empleados", data);
+            await axios.post("/empleados", data);
             alert("Empleado guardado satisfactoriamente");
             reset();
         } catch (error) {
@@ -18,7 +18,7 @@ export default function EmpleadoForm() {
 
     // Cargar los empleados
     useEffect(() => {
-        axios.get("http://localhost:3000/api/empleados")
+        axios.get("/empleados")
             .then(response => setEmpleados(response.data))
             .catch(error => console.error("Error al obtener empleados", error));
     }, []);
