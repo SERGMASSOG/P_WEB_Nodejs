@@ -1,6 +1,6 @@
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import Login from './Login';
-import Empleados from './Empleados';
+import Empleados from './EmpleadoForm';
 
 function App() {
   return (
@@ -10,7 +10,7 @@ function App() {
         <Route path="/login" element={<Login />} />
         
         {/* Ruta para empleados */}
-        <Route path="/empleados" element={<Empleados />} />
+        <Route path="/empleados" element={<EmpleadoForm />} />
         
         {/* Redirige cualquier otra ruta a /login */}
         <Route path="*" element={<Navigate to="/login" replace />} />
