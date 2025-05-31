@@ -1,13 +1,21 @@
-import { Routes, Route } from "react-router-dom";
-import Login from "./Login";
-import EmpleadoForm from "./EmpleadoForm";
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
+import Login from './Login';
+import Empleados from './Empleados';
 
 function App() {
   return (
-    <Routes>
-      <Route path="/login" element={<Login />} />
-      <Route path="/empleados" element={<EmpleadoForm />} />
-    </Routes>
+    <BrowserRouter>
+      <Routes>
+        {/* Ruta para login */}
+        <Route path="/login" element={<Login />} />
+        
+        {/* Ruta para empleados */}
+        <Route path="/empleados" element={<Empleados />} />
+        
+        {/* Redirige cualquier otra ruta a /login */}
+        <Route path="*" element={<Navigate to="/login" replace />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
