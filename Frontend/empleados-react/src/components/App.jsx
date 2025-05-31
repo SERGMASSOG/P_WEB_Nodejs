@@ -1,6 +1,6 @@
 import { Routes, Route } from "react-router-dom";
-import Login from "./components/Login";
-import EmpleadoForm from "./components/EmpleadoForm";
+import Login from "./Login";
+import EmpleadoForm from "./EmpleadoForm";
 
 function App() {
   return (
