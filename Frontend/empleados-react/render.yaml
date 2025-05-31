@@ -1,0 +1,9 @@
+services:
+  - type: web
+    name: empleados-frontend
+    env: static
+    staticPublishPath: build
+    routes:
+      - type: rewrite
+        path: /*
+        dest: /index.html
