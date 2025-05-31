@@ -7,11 +7,11 @@ function Login() {
     const [clave, setClave] = useState("");
     const navigate = useNavigate();
 
-    // 🔹 Copia aquí la nueva función
+    const apiUrl = process.env.REACT_APP_API_URL;
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const res = await axios.post("http://localhost:3000/login", { usuario, clave });
+            const res = await axios.post(`${apiUrl}/login`, { usuario, clave });
 
             console.log("Respuesta del backend:", res.data); // 🔍 Verifica qué llega
             
